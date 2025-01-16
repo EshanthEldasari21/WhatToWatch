@@ -1,0 +1,274 @@
+.cardd{
+    margin-top: 2px;
+    margin-left: 48px;
+    background-color: rgb(11, 11, 11);
+    width: 90%;
+    color: white;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+
+}
+
+.Poster{
+    width: 6%;
+    height: 16vh;
+}
+.star{
+    color: rgb(216, 216, 3);
+    margin-right: 8px;
+    margin-top: -14px;
+}  
+.rate{
+  margin-top: 2px;
+}
+.subtextCont{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    gap: 20px;
+}
+.overview{
+    font-size: 15px;
+    margin-top: 4px;
+}
+.divider {
+    height: 1px; /* Thickness of the divider */
+    background-color: #363636; /* Color of the divider */
+    width: 100%; /* Full width */
+    margin: 20px 0; /* Spacing above and below the divider */
+    border: none; /* Remove any default border */
+    margin-top: -4px;
+  }
+  .title{
+    color: white;
+  }
+
+  .rating{
+    display: flex;
+    align-items: center;
+
+  }
+
+
+  .textCont {
+    display: flex;
+    align-items: flex-start; 
+    flex-direction: column; 
+}
+
+.outer {
+  display: flex;
+}
+
+.modalTitle{
+  margin-top: -7px;
+  font-size: 26px;
+}
+.modalPoster{
+  margin-top: -6px;
+  width: 20%;
+  height: 20vh;
+}
+.modalBody{
+  margin-top: -1px;
+  width: 100%;
+  background-color: rgb(19, 19, 19);
+  color: white;
+}
+.modalHead{
+ margin-top: -1px;
+  background-color: rgb(19, 19, 19); /* Background color */
+}
+.first{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.second{
+  margin-left: 11px;
+  display: flex;
+  gap: 12px;
+  margin-top: -7px;
+}
+
+
+.third{
+  display: flex;
+  gap: 4px;
+}
+.modalText{
+  margin-top: 6px;
+  font-size: 14px;
+}
+.modalTexts{
+  font-size: 15px;
+}
+.logo{
+  margin-top: -16px;
+  width: 8%;
+  height: 6vh;
+}
+
+.castcrewDetails{
+margin-top: -10px;
+  font-size: 14.2px;
+  margin-left:8px;
+}
+.castcrewTitle1{
+  margin-top: -14px;
+  display: flex; 
+  gap: 2px;
+
+
+}
+.castcrewTitle{
+  display: flex;
+  gap: 2px;
+
+}
+.Star{
+  color: rgb(216, 216, 3);
+  margin-top: -5px;
+  margin-right: 6px;
+}
+.overView1{
+  font-size: 14px;
+
+}
+
+.ott{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+}
+.ottIcon{
+  width: 10%;
+  height: 7vh;
+}
+
+.section{
+  display: flex;
+  flex-direction: column;
+}
+
+.ottTitle{
+  margin-top: 18px;
+}
+
+
+.sub{
+  font-size: 14px;
+  margin-top: -9px;
+  color: rgb(141, 140, 140);
+  font-weight: 500;
+}
+
+.ottDetails{
+  margin-top: -20px;
+}
+
+.textCont{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.outmost{
+  display: flex;
+  flex-direction: column;
+}
+
+.pagination{
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-button{
+  
+  margin-right: 12px;
+  background-color: #363636;
+  color: aliceblue;
+}
+.page-button:hover{
+  border: 1px solid #363636;
+
+}
+
+.dashh{
+  margin-left: 30px;
+  border-left: 3px solid rgb(163, 2, 2);
+  height: 35px;
+margin-top: 4px;
+}
+.headingggg{
+  display: flex;
+  margin-top: 20px;
+  margin-left: 19px;
+}
+.info{
+  cursor: pointer;
+  margin-top: -18.2px;
+}
+.page-button{
+  height: 6vh;
+  font-size: 13.3px;
+  font-weight: bold;
+}
+
+.shimmer-effect-details{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shimmer-effect-innercont{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.shimmer-effect-outtercont{
+  display: flex;
+  gap: 8px;
+}
+.shimmer-effect-img{
+  width: 6%;
+  height: 16vh;
+  background: linear-gradient(90deg, #181818 25%, #181818 50%, #181818 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+.shimmer-effect-title{
+  height: 20px;
+    width: 40%;
+    background: linear-gradient(90deg, #181818 25%, #181818 50%, #181818 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+}
+
+.shimmer-effect-year, .shimmer-effect-rate{
+  height: 20px;
+    width: 10%;
+    background: linear-gradient(90deg, #181818 25%, #181818 50%, #181818 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+}
+
+.shimmer-effect-info{
+  height: 20px;
+  width: 8%;
+  background: linear-gradient(90deg, #181818 25%, #181818 50%, #181818 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 90%;
+}
+
+/* .shimmer-effect-overview{
+
+} */
+

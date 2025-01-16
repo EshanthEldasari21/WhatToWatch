@@ -1,0 +1,42 @@
+.headinggg{
+    display: flex;
+    margin-top: 40px;
+    margin-left: -6px;
+  }
+
+  .genreTitle{
+    font-size: 30px;
+  }
+  .dashh{
+    margin-left: 30px;
+    border-left: 3px solid rgb(163, 2, 2);
+    height: 35px;
+  margin-top: 4px;
+}
+
+.contt{
+    width: 20%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+}
+.posterrr{
+    height: 35vh;
+    width: 60%;
+    margin: 35px auto auto auto;
+}
+
+.langWrapper{
+  margin: 0 auto;
+    overflow: hidden; /* Prevent horizontal scrolling */
+    max-width: 100%;
+}
+
+.infoDetailss{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+margin-bottom: 10px;
+margin-left: 4px;
+}

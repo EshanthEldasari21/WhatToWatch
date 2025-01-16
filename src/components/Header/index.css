@@ -1,0 +1,75 @@
+
+.nav{
+    background-color: rgb(7, 7, 7);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position:sticky;
+    top: 0;
+    z-index: 1000;
+}
+.navLink{
+    color: rgb(228, 227, 227);
+}
+#basic-nav-dropdown{
+    color: rgb(228, 227, 227);
+
+} 
+#basic-nav-dropdown:hover{
+    color: white;
+
+} 
+#basic-nav-dropdown:focus{
+    font-weight:550;
+    color: white;
+}
+.navLink:focus{
+    font-weight:550;
+    color: white;
+}
+.navLink:hover{
+    color: white;
+}
+.d-flex{
+    width: 50%;
+    margin-left: 20px;
+}
+.d-flex::selection{
+    border: none;
+}
+
+
+.searchBtn{
+    background: none;
+    background-color: white;
+    color: rgb(77, 76, 76);
+    border: black;
+    margin-left: -50px;
+}
+.searchBtn:hover{
+    background: none;
+    color: rgb(77, 76, 76);
+}
+.searchBtn:focus{
+    background-color: white;
+    border-color: white;
+}
+.searchBtn::selection{
+    background-color: white;
+    border-color: white;
+}
+.searchBtn1{
+    background: none;
+    color: rgb(77, 76, 76);
+}
+
+.novideo{
+    background: none;
+    background-image: url('/src/assets/trans.png');
+    height: 30vh;
+}
+
+.searchIcon{
+    background-color: white;
+    color: rgb(77, 76, 76);
+}
