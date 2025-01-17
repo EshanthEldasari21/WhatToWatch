@@ -21,6 +21,7 @@ const Index = () => {
     const [nowPlayingMovieDetails, setNowPlayingMovieDetails] = useState([]);
     const [popularMovieDetails, setPopularMovieDetails] = useState([]);
     const [upcomingMovieDetails, setUpComingMovieDetails] = useState([]);
+    const [trendingPeople, setTrendingPeople] = useState([]);
     const [credits, setCredits] = useState([]);
     const sliderRef = useRef(null);
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -124,6 +125,30 @@ const Index = () => {
         }
     };
 
+    const getTrendingCelebs = async () => {
+
+        const options = {
+            method: 'GET',
+            headers: {
+              accept: 'application/json',
+              Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNWRlM2FkNzQyMDc2YjlhOWM5MjgyNGNmMWZjNzFhZCIsIm5iZiI6MTcwNzgyNTMzNC43MDQsInN1YiI6IjY1Y2I1OGI2MWMwOWZiMDE4MjM4OGVkOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.O9x6krd9JZ_7XHXuMP4KzjZaFAYXqQPeZ1cK0XTw99M'
+            }
+          };
+
+          try {
+            const data = await fetch ('https://api.themoviedb.org/3/trending/person/day?language=en-US', options);
+            const result = await data.json();
+            setTrendingPeople(result.results || []);
+            
+          } catch (error) {
+            console.error("Error",  error);
+            
+          }
+       
+
+
+    }
+
     const getParticularMovieDetails = async (id) => {
         const url = `${BASE_URL}/movie/${id}?language=en-US`;
         try {
@@ -183,7 +208,7 @@ const Index = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            await Promise.all([getNowPlayingMovieDetails(), getPopularMovieDetails(), getUpComingMovieDetails()]);
+            await Promise.all([getNowPlayingMovieDetails(), getPopularMovieDetails(), getUpComingMovieDetails(), getTrendingCelebs()]);
             setLoading(false);
         };
         fetchData();
@@ -207,6 +232,24 @@ const Index = () => {
         speed: 700,
         slidesToShow: 4,
         slidesToScroll: 2,
+        cssEase: 'ease-in-out'
+    };
+
+    const settings2 = {
+        dots: false,
+        infinite: true,
+        speed: 700,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        cssEase: 'ease-in-out'
+    };
+
+    const settings3 = {
+        dots: false,
+        infinite: true,
+        speed: 700,
+        slidesToShow: 4,
+        slidesToScroll: 1,
         cssEase: 'ease-in-out'
     };
 
@@ -235,8 +278,33 @@ const Index = () => {
         </div>
     );
 
+    const profession = {
+        "Directing" :"Director",
+        "Acting" : "Actor",
+        "Creator" : "Producer"
+    }
+
     return (
         <>
+
+            <div className="popularMovie">
+                <Slider {...settings2}>
+                    {popularMovieDetails.map((details) => (
+                        <>
+
+                            <img className='popularImg1' src={details.backdrop_path ? `https://image.tmdb.org/t/p/original${details.backdrop_path}` : ImageNotFound} width={'1350vw'} height={'580vh'} />
+                            <div className="popularMovieCredits">
+                                <h2 className="popularTitle">{details.title}</h2>
+                                <div className="popularFurther">
+                                    <div className="popularTrailer" onClick={() => { getTrailer(details.id) }}><h6><IoMdPlay className='playBtn' />Trailer</h6></div>
+                                    <div className='popularMovieInfo'> More Info <FiInfo onClick={() => { getParticularMovieDetails(details.id); getCredits(details.id); }} /></div>
+                                </div>
+                            </div>
+                        </>
+                    ))}
+                </Slider>
+            </div>
+
             <div className="cardsContainer">
                 {loading ? <div className="shimmer-heading"></div> : <div className="heading"><p className='dash'></p><h5>Now Playing <MdPlayCircleOutline />
                 </h5></div>}
@@ -250,7 +318,7 @@ const Index = () => {
                                     variant="top"
                                     src={
                                         nowPlayingMovieDetail.poster_path
-                                            ? `https://image.tmdb.org/t/p/w500${nowPlayingMovieDetail.poster_path}`
+                                            ? `https://image.tmdb.org/t/p/original${nowPlayingMovieDetail.poster_path}`
                                             : ImageNotFound
                                     }
                                     alt="Image not Found"
@@ -276,14 +344,14 @@ const Index = () => {
                 </Slider>
             </div>
 
-            <div className="cardsContainer">
+            {/* <div className="cardsContainer">
                 {loading ? <div className="shimmer-heading"></div> : <div className="heading"><p className='dash'></p><h5>Trending</h5></div>}
                 <Slider {...settings}>
                     {loading
                         ? Array(4).fill(0).map((_, index) => <ShimmerCard2 key={index} />)
                         : popularMovieDetails.map((popularMovieDetail) => (
                             <Card className="cards" key={popularMovieDetail.id}>
-                                <Card.Img variant="top" src={popularMovieDetail.poster_path?`https://image.tmdb.org/t/p/w500${popularMovieDetail.poster_path}`:ImageNotFound } alt='Image not found' className='cardImg' />
+                                <Card.Img variant="top" src={popularMovieDetail.poster_path ? `https://image.tmdb.org/t/p/w500${popularMovieDetail.poster_path}` : ImageNotFound} alt='Image not found' className='cardImg' />
                                 <Card.Body className='cardBody'>
                                     <Card.Title className='cardTitle'>{popularMovieDetail.title}</Card.Title>
                                     <Card.Text className='cardTextt'>{convertDateToWords(popularMovieDetail.release_date)}</Card.Text>
@@ -297,7 +365,7 @@ const Index = () => {
                             </Card>
                         ))}
                 </Slider>
-            </div>
+            </div> */}
 
             <div className="cardsContainer">
                 {loading ? <div className="shimmer-heading"></div> : <div className="heading"><p className='dash'></p><h5> Upcoming
@@ -307,7 +375,7 @@ const Index = () => {
                         ? Array(4).fill(0).map((_, index) => <ShimmerCard2 key={index} />)
                         : upcomingMovieDetails.map((upcomingMovieDetail) => (
                             <Card className="cards" key={upcomingMovieDetail.id} onClick={() => { }}>
-                                <Card.Img variant="top" src={upcomingMovieDetail.poster_path?`https://image.tmdb.org/t/p/w500${upcomingMovieDetail.poster_path}` : ImageNotFound} className='cardImg' />
+                                <Card.Img variant="top" src={upcomingMovieDetail.poster_path ? `https://image.tmdb.org/t/p/original${upcomingMovieDetail.poster_path}` : ImageNotFound} className='cardImg' />
                                 <Card.Body className='cardBody'>
                                     <Card.Title className='cardTitle'>{upcomingMovieDetail.title}</Card.Title>
                                     <Card.Text className='cardText'>
@@ -328,14 +396,41 @@ const Index = () => {
                 </Slider>
             </div>
 
+            <div className="trendingPeople">
+                {loading ? <div className="shimmer-heading"></div> : <div className="heading"><p className='dash'></p><h5>Trending Celebrities
+                </h5></div>}
+                <Slider {...settings3} >
 
+                    {trendingPeople.map((people) => (
+                            <>
+                                <div >
+                                    <img  className='peopleImg' src={
+                                        people.profile_path
+                                            ? `https://image.tmdb.org/t/p/original${people.profile_path}`
+                                            : ImageNotFound
+                                    } />
+                                </div>
+                                <div className="peopleDetails">
+                                    <h5 className="peopleName">{people.name}</h5>
+                                    <p className="peopleProf">
+  {people?.known_for_department === "Acting"
+    ? "Actor"
+    : people?.known_for_department === "Directing"
+    ? "Director"
+    : people?.known_for_department}
+</p>
+                                </div>
+                            </>
+                        ))}
+                </Slider>
+            </div>
 
             <Modal show={showModal} onHide={() => setShowModal(false)} >
                 {particularMovieDetails && (
                     <Modal.Body className='modalBody'>
                         <div className="third">
                             <img
-                                src={particularMovieDetails.poster_path? `https://image.tmdb.org/t/p/w500${particularMovieDetails.poster_path}`: ImageNotFound} className='modalPoster'
+                                src={particularMovieDetails.poster_path ? `https://image.tmdb.org/t/p/original${particularMovieDetails.poster_path}` : ImageNotFound} className='modalPoster'
                             />
                             <div className="first">
 
@@ -393,7 +488,7 @@ const Index = () => {
                                         <div className="bms">
                                             <div className="bmscont">
                                                 <a className="anchor" target="_blank" rel="noopener noreferrer" href="https://in.bookmyshow.com/">
-                                                    <img className="bmsImg" src= {BookMyShow} alt="BookMyShow" />
+                                                    <img className="bmsImg" src={BookMyShow} alt="BookMyShow" />
                                                     <RiExternalLinkFill className="linked" />
                                                 </a>
                                             </div>
