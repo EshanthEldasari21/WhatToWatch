@@ -3,7 +3,8 @@
     width: 98%;
 }
 
-.cards{     
+.cards{    
+    margin-left: 10px; 
     margin-top: 8px;
     background-color: rgb(12, 12, 12);
     color: white;
@@ -66,7 +67,7 @@ h5{
 }
 .heading{
     display: flex;
-
+margin-left: -14px;
     
 }
 
@@ -94,6 +95,7 @@ h5{
     width: 100%;
     background-color: rgb(19, 19, 19);
     color: white;
+    border-radius: 6px;
 }
 .modalHead{
    margin-top: -1px;
@@ -170,9 +172,37 @@ gap: 12px;
     padding-left: 8px;
     padding-right: 8px;
     margin-left: -9px;
+
   }
 
-  .watchTrailer{
+  .popularTrailer{
+    padding-top: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 4px;
+    width: 7%;
+    height: 4vh;
+    color: black;
+    background-color: rgb(241, 241, 241);
+  }
+  .popularTrailer:hover{
+    cursor: pointer;
+  }
+  .popularMovieInfo{
+    color: white;
+    background-color: rgb(104, 104, 104);
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 4px;
+    width: 8.3%;
+    height: 4vh;
+  }
+  .popularMovieInfo:hover{
+    cursor: pointer;
+  }
+  
+
+  .watchTrailer{ 
     padding-top: 2px;
     padding-left: 8px;
     padding-right: 8px;
@@ -390,6 +420,46 @@ gap: 12px;
 .theatreHeading{
     margin-left: 2px;
 }
+
+.popularMovie{
+  
+    width: 100%;
+    overflow: hidden;
+}
+.popularMovieCredits{
+    margin-bottom: 20px;
+    margin-top: -86px;
+   margin-left: 40px;
+}
+
+.popularFurther{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.trendingPeople{
+    margin-top: 40px;
+    width: 100%;
+    overflow: hidden;
+}
+.peopleImg{
+    margin-left: 55px;
+    width: 70%;
+    height: 45vh;
+    border-radius: 50%;
+}
+.peopleDetails{
+    margin-top: 10px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+ }
+ .peopleProf{
+    color: rgb(158, 158, 158);
+    font-size: 14px;
+   
+ }
 
 @keyframes shimmer {
     from {
