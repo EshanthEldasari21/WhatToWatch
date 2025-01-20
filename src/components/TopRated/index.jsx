@@ -153,6 +153,7 @@ const Index = () => {
               />
               <div className="outmost">
                 <h5 className="title">{movie.title}</h5>
+                
                 <div className="outer">
                   <div className="subtextCont">
                     <p className="releaseYear">{movie.release_date.slice(0, 4)}</p>
@@ -173,7 +174,9 @@ const Index = () => {
                   </div>
                 </div>
               </div>
+          
             </div>
+           
             <p className="overview">{movie.overview}</p>
             <div className="divider"></div>
           </div>

@@ -104,7 +104,7 @@ const Genre =  () =>{
             <div key={movie.id} className="cont">
               <div >
                 <img
-                  src={movie.poster_path? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : ImageNotFound}
+                  src={movie.poster_path? `https://image.tmdb.org/t/p/original${movie.poster_path}` : ImageNotFound}
                   className="poster"
                 />
               </div>
@@ -129,7 +129,7 @@ const Genre =  () =>{
                       <Modal.Body className='modalBody'>
                           <div className="third">
                               <img
-                                  src={particularMovieDetails.poster_path ? `https://image.tmdb.org/t/p/w500${particularMovieDetails.poster_path}`: ImageNotFound} className='modalPoster'
+                                  src={particularMovieDetails.poster_path ? `https://image.tmdb.org/t/p/original${particularMovieDetails.poster_path}`: ImageNotFound} className='modalPoster'
                               />
                               <div className="first">
   

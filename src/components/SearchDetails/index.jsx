@@ -94,7 +94,7 @@ const SearchDetails = () => {
           <div key={movie.id} className="cont">
             <div >
               <img
-                src={movie.poster_path?`https://image.tmdb.org/t/p/w500${movie.poster_path}` : ImageNotFound}
+                src={movie.poster_path?`https://image.tmdb.org/t/p/original${movie.poster_path}` : ImageNotFound}
                 className="poster"
               />
             </div>
@@ -119,11 +119,11 @@ const SearchDetails = () => {
                     <Modal.Body className='modalBody'>
                         <div className="third">
                             <img
-                                src={particularMovieDetails.poster_path ? `https://image.tmdb.org/t/p/w500${particularMovieDetails.poster_path}`: ImageNotFound} className='modalPoster'
+                                src={particularMovieDetails.poster_path ? `https://image.tmdb.org/t/p/original${particularMovieDetails.poster_path}`: ImageNotFound} className='modalPoster'
                             />
                             <div className="first">
 
-                                <h5 className='modalTitle'><strong>{particularMovieDetails.original_title}</strong></h5>
+                                <h5 className='modalTitle'><strong>{particularMovieDetails.title}</strong></h5>
                                 <div className="second">
                                     <p className='modalTexts'>{particularMovieDetails.release_date.slice(0, 4)}</p>
                                     <p className='modalTexts'><IoStarSharp className='stAAr' />{Math.floor(particularMovieDetails.vote_average * 10) / 10}</p>

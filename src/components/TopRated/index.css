@@ -131,7 +131,10 @@ margin-top: -10px;
   margin-right: 6px;
 }
 .overView1{
-  font-size: 14px;
+  font-size: 13.5px;
+  font-weight:545;
+    font-family:Arial, Helvetica, sans-serif;
+        color: rgb(207, 207, 207);
 
 }
 
