@@ -288,7 +288,7 @@ const Index = () => {
         <>
 
             <div className="popularMovie">
-                <Slider {...settings2}>
+                <Slider {...settings2}  >
                     {popularMovieDetails.map((details) => (
                         <>
 
@@ -343,29 +343,6 @@ const Index = () => {
                         ))}
                 </Slider>
             </div>
-
-            {/* <div className="cardsContainer">
-                {loading ? <div className="shimmer-heading"></div> : <div className="heading"><p className='dash'></p><h5>Trending</h5></div>}
-                <Slider {...settings}>
-                    {loading
-                        ? Array(4).fill(0).map((_, index) => <ShimmerCard2 key={index} />)
-                        : popularMovieDetails.map((popularMovieDetail) => (
-                            <Card className="cards" key={popularMovieDetail.id}>
-                                <Card.Img variant="top" src={popularMovieDetail.poster_path ? `https://image.tmdb.org/t/p/w500${popularMovieDetail.poster_path}` : ImageNotFound} alt='Image not found' className='cardImg' />
-                                <Card.Body className='cardBody'>
-                                    <Card.Title className='cardTitle'>{popularMovieDetail.title}</Card.Title>
-                                    <Card.Text className='cardTextt'>{convertDateToWords(popularMovieDetail.release_date)}</Card.Text>
-                                    <Card.Text className='cardText'>
-                                        <div className="outsideCont">
-                                            <div className="trailer" onClick={() => { getTrailer(popularMovieDetail.id) }}><h6><IoMdPlay className='playBtn' />Trailer</h6></div>
-                                            <FiInfo onClick={() => { getParticularMovieDetails(popularMovieDetail.id); getCredits(popularMovieDetail.id); }} />
-                                        </div>
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        ))}
-                </Slider>
-            </div> */}
 
             <div className="cardsContainer">
                 {loading ? <div className="shimmer-heading"></div> : <div className="heading"><p className='dash'></p><h5> Upcoming
@@ -425,6 +402,8 @@ const Index = () => {
                 </Slider>
             </div>
 
+            <div className="certification">© 2025 by WhatToWatch.com, Inc.</div>
+
             <Modal show={showModal} onHide={() => setShowModal(false)} >
                 {particularMovieDetails && (
                     <Modal.Body className='modalBody'>
@@ -434,7 +413,7 @@ const Index = () => {
                             />
                             <div className="first">
 
-                                <h5 className='modalTitle'><strong>{particularMovieDetails.original_title}</strong></h5>
+                                <h5 className='modalTitle'><strong>{particularMovieDetails.title}</strong></h5>
                                 <div className="second">
                                     <p className='modalTexts'>{particularMovieDetails.release_date.slice(0, 4)}</p>
                                     <p className='modalTexts'><IoStarSharp className='stAAr' />{Math.floor(particularMovieDetails.vote_average * 10) / 10}</p>
@@ -448,7 +427,7 @@ const Index = () => {
                                 {credits && (
                                     <div className="castcrewDetails">
                                         <div className="castcrewTitle">
-                                            Cast-
+                                            Cast-  
                                             <p className="castcrew">
                                                 {credits.cast?.slice(0, 3)?.map((credit) => credit?.name)?.join(', ')}
                                             </p>

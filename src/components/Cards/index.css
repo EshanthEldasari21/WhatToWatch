@@ -1,6 +1,6 @@
 .cardsContainer{
     margin-top: 2rem;
-    width: 98%;
+    width: 97%;
 }
 
 .cards{    
@@ -35,6 +35,7 @@
     
 }
 .outsideContt{
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,9 +67,14 @@ h5{
       margin-top: 2px;
 }
 .heading{
-    display: flex;
+display: flex;
 margin-left: -14px;
     
+}
+
+.heading, h5{
+    
+    font-size: 21px;
 }
 
 .stAAr{
@@ -102,11 +108,15 @@ margin-left: -14px;
     background-color: rgb(19, 19, 19); /* Background color */
 }
 .first{
+    
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 .second{
+ font-weight:600;
+font-family:Arial, Helvetica, sans-serif;
+    color: rgb(207, 207, 207);
     margin-left: 9px;
     display: flex;
     gap: 12px;
@@ -213,7 +223,7 @@ gap: 12px;
         height: 4vh;
         
         background-color: rgb(43, 42, 42);
-        border-radius: 8px;
+        border-radius: 16px;
         cursor: pointer;
       }
   
@@ -221,7 +231,7 @@ gap: 12px;
     width: 40%;
         height: 4vh;
     background-color: rgb(43, 42, 42);
-    border-radius: 8px;
+    border-radius: 16px;
     cursor: pointer;
   }
   .playBtn{
@@ -265,8 +275,11 @@ gap: 12px;
    margin-right:10px ;
     width: 6%;
     height: 6vh;
-}
+} 
 .castcrewDetails{
+    font-weight:600;
+    font-family:Arial, Helvetica, sans-serif;
+        color: rgb(207, 207, 207);
     margin-top: -18px;
     margin-left: 8px;
     font-size: 14px;
@@ -282,11 +295,14 @@ gap: 12px;
     display: flex;
     gap: 2px;
 
-}
+} 
+
 .overView{
-    margin-top: 6px;
-    font-size: 14.2px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 3px;
+    font-size: 13.4px;
+    font-weight:545;
+    font-family:Arial, Helvetica, sans-serif;
+        color: rgb(207, 207, 207);
 }
 
 
@@ -422,13 +438,14 @@ gap: 12px;
 }
 
 .popularMovie{
-  
     width: 100%;
     overflow: hidden;
+    
 }
 .popularMovieCredits{
-    margin-bottom: 20px;
-    margin-top: -86px;
+    
+    margin-bottom: 80px;
+    margin-top: -130px;
    margin-left: 40px;
 }
 
@@ -439,8 +456,8 @@ gap: 12px;
 }
 .trendingPeople{
     margin-top: 40px;
-    width: 100%;
-    overflow: hidden;
+    width: 97%;
+    
 }
 .peopleImg{
     margin-left: 55px;
@@ -457,10 +474,17 @@ gap: 12px;
  }
  .peopleProf{
     color: rgb(158, 158, 158);
-    font-size: 14px;
+    font-size: 14px; 
    
  }
 
+ .certification{
+    color: rgb(207, 207, 207);
+    font-size: 13px;
+    margin-top: 60px;
+    margin-bottom: 10px;
+    text-align: center;
+ }
 @keyframes shimmer {
     from {
         background-position: -200% 0;

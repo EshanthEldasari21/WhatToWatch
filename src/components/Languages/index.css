@@ -16,21 +16,20 @@
 
 .contt{
     width: 20%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 8px 8px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
     overflow: hidden;
     text-align: center;
 }
 .posterrr{
-    height: 35vh;
+    height: 40vh;
     width: 60%;
     margin: 35px auto auto auto;
 }
 
 .langWrapper{
-  margin: 0 auto;
-    overflow: hidden; /* Prevent horizontal scrolling */
-    max-width: 100%;
+margin-left: 5px;
+    width: 97%;
 }
 
 .infoDetailss{
@@ -38,5 +37,27 @@
     align-items: center;
     justify-content: space-between;
 margin-bottom: 10px;
-margin-left: 4px;
+width: 94%;
+cursor: pointer;
+
+}
+
+.Trailerr{
+  margin-left: 8px;
+  width: 44%;
+  padding-top: 5px;
+}
+
+
+.Trailerr:hover{
+  cursor: pointer;
+  border-radius: 16px;
+  background-color: rgb(32, 32, 32);
+}
+.movieTitlee{
+  font-size: 17px;
+}
+.releasee{
+  font-size: 13.5px;
+  color: rgb(172, 172, 172);
 }

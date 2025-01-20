@@ -149,16 +149,16 @@ const Language = () => {
                         <div key={movie.id} className="contt">
                             <div >
                                 <img
-                                    src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : ImageNotFound}
+                                    src={movie.poster_path ? `https://image.tmdb.org/t/p/original${movie.poster_path}` : ImageNotFound}
                                     className="posterrr"
                                 />
                             </div>
                             <div className="details">
-                                <h5 className="movieTitle">{movie.title}</h5>
-                                <p className="release">{convertDateToWords(movie.release_date)}</p>
+                                <h5 className="movieTitlee">{movie.title}</h5>
+                                <p className="releasee">{convertDateToWords(movie.release_date)}</p>
                             </div>
                             <div className="infoDetailss">
-                                <div className="Trailer" onClick={() => { getTrailer(movie.id) }}><h6><IoMdPlay className='playBtn' />Trailer</h6></div>
+                                <div className="Trailerr" onClick={() => { getTrailer(movie.id) }}><h6><IoMdPlay className='playBtn' />Trailer</h6></div>
                                 <FiInfo className='INFO' onClick={() => { getParticularMovieDetails(movie.id); getCredits(movie.id); }} />
                             </div>
                         </div>
@@ -176,13 +176,13 @@ const Language = () => {
                         <div key={movie.id} className="contt">
                             <div >
                                 <img
-                                    src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : ImageNotFound}
+                                    src={movie.poster_path ? `https://image.tmdb.org/t/p/original${movie.poster_path}` : ImageNotFound}
                                     className="posterrr"
                                 />
                             </div>
                             <div className="details">
-                                <h5 className="movieTitle">{movie.title}</h5>
-                                <p className="release">{convertDateToWords(movie.release_date)}</p>
+                                <h5 className="movieTitlee">{movie.title}</h5>
+                                <p className="releasee">{convertDateToWords(movie.release_date)}</p>
                             </div>
                             <div className="infoDetailss">
                                 <div className="Trailer" onClick={() => { getTrailer(movie.id) }}><h6><IoMdPlay className='playBtn' />Trailer</h6></div>
@@ -206,13 +206,13 @@ const Language = () => {
                         <div key={movie.id} className="contt">
                             <div >
                                 <img
-                                    src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`: ImageNotFound}
+                                    src={movie.poster_path ? `https://image.tmdb.org/t/p/original${movie.poster_path}`: ImageNotFound}
                                     className="posterrr"
                                 />
                             </div>
                             <div className="details">
-                                <h5 className="movieTitle">{movie.title}</h5>
-                                <p className="release">{convertDateToWords(movie.release_date)}</p>
+                                <h5 className="movieTitlee">{movie.title}</h5>
+                                <p className="releasee">{convertDateToWords(movie.release_date)}</p>
                             </div>
                             <div className="infoDetailss">
                                 <div className="Trailer" onClick={() => { getTrailer(movie.id) }}><h6><IoMdPlay className='playBtn' />Trailer</h6></div>
@@ -234,11 +234,11 @@ const Language = () => {
                     <Modal.Body className='modalBody'>
                         <div className="third">
                             <img
-                                src={particularMovieDetails.poster_path? `https://image.tmdb.org/t/p/w500${particularMovieDetails.poster_path}`: ImageNotFound} className='modalPoster'
+                                src={particularMovieDetails.poster_path? `https://image.tmdb.org/t/p/original${particularMovieDetails.poster_path}`: ImageNotFound} className='modalPoster'
                             />
                             <div className="first">
 
-                                <h5 className='modalTitle'><strong>{particularMovieDetails.original_title}</strong></h5>
+                                <h5 className='modalTitle'><strong>{particularMovieDetails.title}</strong></h5>
                                 <div className="second">
                                     <p className='modalTexts'>{particularMovieDetails.release_date.slice(0, 4)}</p>
                                     <p className='modalTexts'><IoStarSharp className='stAAr' />{Math.floor(particularMovieDetails.vote_average * 10) / 10}</p>
