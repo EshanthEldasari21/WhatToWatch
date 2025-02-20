@@ -1,6 +1,6 @@
 .cardsContainer{
     margin-top: 2rem;
-    width: 97%;
+    width: 99%;
 }
 
 .cards{    
@@ -11,6 +11,7 @@
     transition: transform 0.5s ease, opacity 0.5s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
     height: 63vh; 
+   
     margin-bottom: 5px;
 
 }
@@ -62,7 +63,7 @@ h5{
 }
 .dash{
         margin-left: 30px;
-        border-left: 3px solid #FFCE00;
+        border-left: 3px solid #DB202C;
         height: 25px;
       margin-top: 2px;
 }
@@ -460,9 +461,10 @@ gap: 12px;
     
 }
 .peopleImg{
-    margin-left: 55px;
-    width: 70%;
-    height: 45vh;
+    margin-top: 15px;
+    margin-left: 40px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
 }
 .peopleDetails{
@@ -485,6 +487,36 @@ gap: 12px;
     margin-bottom: 10px;
     text-align: center;
  }
+
+ .sliderArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); 
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.3s ease-in-out;
+}
+
+.sliderArrow:hover {
+    background: rgba(78, 78, 78, 0.8);
+}
+
+.nextArrow {
+    right: -6px;
+}
+
+.prevArrow {
+    left: 10px;
+}
+
 @keyframes shimmer {
     from {
         background-position: -200% 0;

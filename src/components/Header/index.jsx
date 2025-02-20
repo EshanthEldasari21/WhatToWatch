@@ -8,7 +8,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { IoSearchOutline } from 'react-icons/io5';
-import WhatToWatch from '../../../public/WhatToWatchYellow.png'
+import WhatToWatch from '../../../public/WhattowatchLogo.png'
 
 const Header = () => {
   const [searchResults, setSearchResults] = useState([]);

@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './index.css';
 import Card from 'react-bootstrap/Card';
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"; 
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -226,13 +228,31 @@ const Index = () => {
         return () => clearInterval(interval);
     }, [currentSlide, popularMovieDetails.length]);
 
+    const NextArrow = ({ onClick }) => {
+        return (
+            <div className="sliderArrow nextArrow" onClick={onClick}>
+                <IoIosArrowForward />
+            </div>
+        );
+    };
+    
+    const PrevArrow = ({ onClick }) => {
+        return (
+            <div className="sliderArrow prevArrow" onClick={onClick}>
+                <IoIosArrowBack />
+            </div>
+        );
+    }
+
     const settings = {
         dots: false,
         infinite: true,
         speed: 700,
         slidesToShow: 4,
         slidesToScroll: 2,
-        cssEase: 'ease-in-out'
+        cssEase: 'ease-in-out',
+        nextArrow: <NextArrow />
+  
     };
 
     const settings2 = {
@@ -250,7 +270,8 @@ const Index = () => {
         speed: 700,
         slidesToShow: 4,
         slidesToScroll: 1,
-        cssEase: 'ease-in-out'
+        cssEase: 'ease-in-out',
+        nextArrow: <NextArrow />
     };
 
     const ShimmerCard = () => (
@@ -283,6 +304,7 @@ const Index = () => {
         "Acting" : "Actor",
         "Creator" : "Producer"
     }
+   
 
     return (
         <>
