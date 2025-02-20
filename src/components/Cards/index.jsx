@@ -217,14 +217,14 @@ const Index = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             if (sliderRef.current) {
-                const nextSlide = (currentSlide + 4) % nowPlayingMovieDetails.length;
+                const nextSlide = (currentSlide + 1) % popularMovieDetails.length;
                 sliderRef.current.slickGoTo(nextSlide);
                 setCurrentSlide(nextSlide);
             }
         }, 3000);
 
         return () => clearInterval(interval);
-    }, [currentSlide, nowPlayingMovieDetails.length]);
+    }, [currentSlide, popularMovieDetails.length]);
 
     const settings = {
         dots: false,
@@ -288,11 +288,11 @@ const Index = () => {
         <>
 
             <div className="popularMovie">
-                <Slider {...settings2}  >
+                <Slider {...settings2} ref={sliderRef} >
                     {popularMovieDetails.map((details) => (
                         <>
 
-                            <img className='popularImg1' src={details.backdrop_path ? `https://image.tmdb.org/t/p/original${details.backdrop_path}` : ImageNotFound} width={'1350vw'} height={'580vh'} />
+                            <img className='popularImg1' src={details.backdrop_path ? `https://image.tmdb.org/t/p/original${details.backdrop_path}` : ImageNotFound} width={'1350vw'} height={'610vh'} />
                             <div className="popularMovieCredits">
                                 <h2 className="popularTitle">{details.title}</h2>
                                 <div className="popularFurther">
@@ -308,7 +308,7 @@ const Index = () => {
             <div className="cardsContainer">
                 {loading ? <div className="shimmer-heading"></div> : <div className="heading"><p className='dash'></p><h5>Now Playing <MdPlayCircleOutline />
                 </h5></div>}
-                <Slider {...settings} ref={sliderRef}>
+                <Slider {...settings} >
 
                     {loading
                         ? Array(4).fill(0).map((_, index) => <ShimmerCard key={index} />)
