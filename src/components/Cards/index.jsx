@@ -86,7 +86,7 @@ const Index = () => {
         }
     };
     const getPopularMovieDetails = async () => {
-        const url = `${BASE_URL}/trending/movie/day?language=en-US`;
+        const url = `${BASE_URL}/trending/movie/week?language=en-US`;
         try {
             const movies = await fetchAllPages(url);
             const tenDaysAgo = new Date();
@@ -138,7 +138,7 @@ const Index = () => {
           };
 
           try {
-            const data = await fetch ('https://api.themoviedb.org/3/trending/person/day?language=en-US', options);
+            const data = await fetch ('https://api.themoviedb.org/3/trending/person/week?language=en-US', options);
             const result = await data.json();
             setTrendingPeople(result.results || []);
             
@@ -311,7 +311,7 @@ const Index = () => {
 
             <div className="popularMovie">
                 <Slider {...settings2} ref={sliderRef} >
-                    {popularMovieDetails.map((details) => (
+                    {popularMovieDetails?.map((details) => (
                         <>
 
                             <img className='popularImg1' src={details.backdrop_path ? `https://image.tmdb.org/t/p/original${details.backdrop_path}` : ImageNotFound} width={'1350vw'} height={'610vh'} />
