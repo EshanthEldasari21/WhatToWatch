@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './index.css';
 import Card from 'react-bootstrap/Card';
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"; 
-
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -132,21 +131,21 @@ const Index = () => {
         const options = {
             method: 'GET',
             headers: {
-              accept: 'application/json',
-              Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNWRlM2FkNzQyMDc2YjlhOWM5MjgyNGNmMWZjNzFhZCIsIm5iZiI6MTcwNzgyNTMzNC43MDQsInN1YiI6IjY1Y2I1OGI2MWMwOWZiMDE4MjM4OGVkOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.O9x6krd9JZ_7XHXuMP4KzjZaFAYXqQPeZ1cK0XTw99M'
+                accept: 'application/json',
+                Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNWRlM2FkNzQyMDc2YjlhOWM5MjgyNGNmMWZjNzFhZCIsIm5iZiI6MTcwNzgyNTMzNC43MDQsInN1YiI6IjY1Y2I1OGI2MWMwOWZiMDE4MjM4OGVkOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.O9x6krd9JZ_7XHXuMP4KzjZaFAYXqQPeZ1cK0XTw99M'
             }
-          };
+        };
 
-          try {
-            const data = await fetch ('https://api.themoviedb.org/3/trending/person/week?language=en-US', options);
+        try {
+            const data = await fetch('https://api.themoviedb.org/3/trending/person/week?language=en-US', options);
             const result = await data.json();
             setTrendingPeople(result.results || []);
-            
-          } catch (error) {
-            console.error("Error",  error);
-            
-          }
-       
+
+        } catch (error) {
+            console.error("Error", error);
+
+        }
+
 
 
     }
@@ -235,7 +234,7 @@ const Index = () => {
             </div>
         );
     };
-    
+
     const PrevArrow = ({ onClick }) => {
         return (
             <div className="sliderArrow prevArrow" onClick={onClick}>
@@ -248,12 +247,50 @@ const Index = () => {
         dots: false,
         infinite: true,
         speed: 700,
-        slidesToShow: 4,
-        slidesToScroll: 2,
+        slidesToShow: 4,  // Default: Show 4 slides (for desktops)
+        slidesToScroll: 2, // Default: Scroll 2 slides
         cssEase: 'ease-in-out',
-        nextArrow: <NextArrow />
-  
+        nextArrow: <NextArrow />,
+        responsive: [
+            {
+                breakpoint: 1200, // Large screens (Desktops)
+                settings: {
+                    slidesToShow: 3, // Show 3 slides
+                    slidesToScroll: 1 // Scroll 1 slide
+                }
+            },
+            {
+                breakpoint: 992, // Laptops / Small Desktops
+                settings: {
+                    slidesToShow: 3, // Show 3 slides
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 768, // Tablets / iPads
+                settings: {
+                    slidesToShow: 2, // Show 2 slides
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 480, // Mobile devices (phones)
+                settings: {
+                    slidesToShow: 1, // Show 2 slides
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 360, // Smaller phones (very small screens)
+                settings: {
+                    slidesToShow: 1, // Show 1 slide
+                    slidesToScroll: 1
+                }
+            }
+        ]
     };
+    
+    
 
     const settings2 = {
         dots: false,
@@ -268,11 +305,49 @@ const Index = () => {
         dots: false,
         infinite: true,
         speed: 700,
-        slidesToShow: 4,
-        slidesToScroll: 1,
+        slidesToShow: 5,  // Default: Show 4 slides (for desktops)
+        slidesToScroll: 1, // Scroll 1 slide at a time
         cssEase: 'ease-in-out',
-        nextArrow: <NextArrow />
+        nextArrow: <NextArrow />,
+        responsive: [
+            {
+                breakpoint: 1200, // Large screens (Desktops)
+                settings: {
+                    slidesToShow: 5, // Show 3 slides
+                    slidesToScroll: 1 // Scroll 1 slide
+                }
+            },
+            {
+                breakpoint: 992, // Laptops / Small Desktops
+                settings: {
+                    slidesToShow: 4, // Show 3 slides
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 768, // Tablets / iPads
+                settings: {
+                    slidesToShow: 4, // Show 2 slides
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 480, // Mobile devices (phones)
+                settings: {
+                    slidesToShow: 3, // Show 2 slides
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 360, // Smaller phones (very small screens)
+                settings: {
+                    slidesToShow: 3, // Show 1 slide
+                    slidesToScroll: 1
+                }
+            }
+        ]
     };
+    
 
     const ShimmerCard = () => (
         <div className="shimmer-card">
@@ -300,11 +375,11 @@ const Index = () => {
     );
 
     const profession = {
-        "Directing" :"Director",
-        "Acting" : "Actor",
-        "Creator" : "Producer"
+        "Directing": "Director",
+        "Acting": "Actor",
+        "Creator": "Producer"
     }
-   
+
 
     return (
         <>
@@ -323,14 +398,14 @@ const Index = () => {
                                 </div>
                             </div>
                         </>
-                    ))}
+                    ))} 
                 </Slider>
             </div>
 
             <div className="cardsContainer">
                 {loading ? <div className="shimmer-heading"></div> : <div className="heading"><p className='dash'></p><h5>Now Playing <MdPlayCircleOutline />
                 </h5></div>}
-                <Slider {...settings} >
+                <Slider {...settings}>
 
                     {loading
                         ? Array(4).fill(0).map((_, index) => <ShimmerCard key={index} />)
@@ -401,26 +476,26 @@ const Index = () => {
                 <Slider {...settings3} >
 
                     {trendingPeople.map((people) => (
-                            <>
-                                <div >
-                                    <img  className='peopleImg' src={
-                                        people.profile_path
-                                            ? `https://image.tmdb.org/t/p/original${people.profile_path}`
-                                            : ImageNotFound
-                                    } />
-                                </div>
-                                <div className="peopleDetails">
-                                    <h5 className="peopleName">{people.name}</h5>
-                                    <p className="peopleProf">
-  {people?.known_for_department === "Acting"
-    ? "Actor"
-    : people?.known_for_department === "Directing"
-    ? "Director"
-    : people?.known_for_department}
-</p>
-                                </div>
-                            </>
-                        ))}
+                        <>
+                            <div >
+                                <img className='peopleImg' src={
+                                    people.profile_path
+                                        ? `https://image.tmdb.org/t/p/original${people.profile_path}`
+                                        : ImageNotFound
+                                } />
+                            </div>
+                            <div className="peopleDetails">
+                                <h5 className="peopleName">{people.name}</h5>
+                                <p className="peopleProf">
+                                    {people?.known_for_department === "Acting"
+                                        ? "Actor"
+                                        : people?.known_for_department === "Directing"
+                                            ? "Director"
+                                            : people?.known_for_department}
+                                </p>
+                            </div>
+                        </>
+                    ))}
                 </Slider>
             </div>
 
@@ -449,7 +524,7 @@ const Index = () => {
                                 {credits && (
                                     <div className="castcrewDetails">
                                         <div className="castcrewTitle">
-                                            Cast-  
+                                            Cast-
                                             <p className="castcrew">
                                                 {credits.cast?.slice(0, 3)?.map((credit) => credit?.name)?.join(', ')}
                                             </p>

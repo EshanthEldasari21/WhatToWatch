@@ -162,7 +162,9 @@ const Header = () => {
               height={35}
             />
           </Nav.Link>
-          <Form className="d-flex">
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="navbar-nav">
+          <Form className="d-flex ">
             <Form.Control
               type="search"
               placeholder="Search"
@@ -179,8 +181,8 @@ const Header = () => {
               <IoSearchOutline className="searchIcon" />
             </Button>
           </Form>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Nav className="headingTops">
+       
+          <Nav className="headingTops ms-auto">
             <Nav.Link as={Link} to="/" className="navLink">
               Home
             </Nav.Link>
@@ -260,8 +262,9 @@ const Header = () => {
             <Nav.Link as={Link} to="/top-rated" className="navLink">
               Top Rated
             </Nav.Link>
-          
+            
           </Nav>
+          </Navbar.Collapse>
     </Navbar>
   );
 };

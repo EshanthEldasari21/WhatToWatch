@@ -13,3 +13,31 @@
         height: 35px;
       margin-top: 4px;
 }
+
+.searchDetailss{
+  margin-left: 20px;
+  display: grid;
+  gap: 8px; /* Adjust as needed */
+  grid-template-columns: repeat(5, 1fr); /* Default: 4 items per row */
+}
+
+@media (max-width: 1024px) {
+  .searchDetails {
+      grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+  }
+}
+
+/* For mobile screens (small screens) */
+@media (max-width: 768px) {
+  .searchDetails {
+     
+      grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+  }
+}
+
+/* For extreme small screens */
+@media (max-width: 480px) {
+  .searchDetails {
+      grid-template-columns: repeat(1, 1fr); /* 1 item per row */
+  }
+}

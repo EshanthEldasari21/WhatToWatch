@@ -98,7 +98,7 @@ const Genre =  () =>{
       <>
       <div className="headinggg"><p className='dashh'></p><h5 className="genreTitle">Popular {genreMap[genre]} Movies</h5></div>
 
-      <div className="searchDetails">
+      <div className="searchDetailss">
         {genreMovies && genreMovies.length > 0 ? (
           genreMovies.map((movie) => (
             <div key={movie.id} className="cont">
